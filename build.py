@@ -12,6 +12,16 @@ HTML=r"""<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
+<meta name="description" content="세계 최고 보험·재정 전문가가 함께하는 국제 조직, 한국MDRT협회.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="한국MDRT협회">
+<meta property="og:title" content="한국MDRT협회 · Million Dollar Round Table Korea">
+<meta property="og:description" content="세계 최고 보험·재정 전문가가 함께하는 국제 조직, 한국MDRT협회.">
+<meta property="og:image" content="https://mdrt-korea.vercel.app/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://mdrt-korea.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
 <title>한국MDRT협회 · Million Dollar Round Table Korea</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
@@ -258,8 +268,8 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
   <div class="msbox reveal">
     <span class="eyebrow" style="justify-content:center">Member Search</span>
     <h3>회원 검색</h3>
-    <div class="msinput"><input id="msq" placeholder="회원 이름 또는 지역을 입력하세요" onkeypress="if(event.key==='Enter')msDo()"><button onclick="msDo()">검색</button></div>
-    <p class="soft">한국MDRT협회 회원을 조회할 수 있습니다. · 시안(demo)</p>
+    <div class="msinput"><input id="msq" placeholder="회원 이름을 입력하세요" onkeypress="if(event.key==='Enter')msDo()"><button onclick="msDo()">검색</button></div>
+    <p class="soft">한국MDRT협회 <b>공식 회원 검색</b>으로 연결됩니다.</p>
   </div>
 </div></section>
 
@@ -419,7 +429,8 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   setInterval(()=>go((i+1)%s.length),5000);})();
 // 회원 검색(시안)
 function msDo(){const q=document.getElementById('msq').value.trim();
-  alert(q?`"${q}" 검색 — 회원 DB 연동 시 결과가 표시됩니다 (시안)`:'검색어를 입력하세요');}
+  if(!q){alert('검색할 회원 이름을 입력하세요');return;}
+  window.open('https://mdrtkorea.org/Membership/searchMember?search_type=mem_username&search_value='+encodeURIComponent(q),'_blank');}
 </script>
 </body>
 </html>"""
