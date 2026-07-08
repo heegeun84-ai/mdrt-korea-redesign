@@ -422,11 +422,10 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
     <div class="mlogo"><img src="assets/logos/kyobo.png" alt="교보생명"></div>
     <div class="mlogo"><img src="assets/logos/kblife.png" alt="KB라이프파트너스"></div>
     <div class="mlogo"><img src="assets/logos/aia.png" alt="AIA프리미어파트너스"></div>
-    <div class="mlogo"><span>KMI에셋</span></div>
-    <div class="mlogo"><span>현대홈쇼핑보험</span></div>
-    <div class="mlogo"><span>인카금융서비스</span></div>
+    <div class="mlogo"><img src="assets/logos/kmi.png" alt="KMI에셋"></div>
+    <div class="mlogo"><img src="assets/logos/hyundai.png" alt="현대홈쇼핑보험"></div>
+    <div class="mlogo"><img src="assets/logos/incar.png" alt="인카금융서비스"></div>
   </div>
-  <p class="center" style="font-size:12px;color:var(--muted);margin-top:18px">※ KMI에셋·현대홈쇼핑보험·인카금융서비스 로고 파일을 주시면 동일 크기로 넣겠습니다.</p>
 </div></section>
 
 <footer><div class="wrap">
