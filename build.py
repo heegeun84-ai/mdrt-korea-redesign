@@ -82,7 +82,8 @@ section.blk{padding:clamp(72px,9vw,116px) 0}
 
 /* about */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.about-vals{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.aboutimg{width:100%;border-radius:14px;border:1px solid var(--line);display:block;box-shadow:var(--sh)}
+.about-vals{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:52px}
 .val{padding:28px 26px;background:#fff}
 .val .ic{font-size:15px;font-weight:800;color:var(--blue);letter-spacing:.12em;margin-bottom:12px}
 .val h4{font-size:16.5px;font-weight:800;color:var(--ink);margin-bottom:6px}
@@ -92,9 +93,9 @@ section.blk{padding:clamp(72px,9vw,116px) 0}
 .egrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .ecard{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.25s;cursor:pointer}
 .ecard:hover{border-color:var(--line2);box-shadow:var(--sh);transform:translateY(-3px)}
-.ecard .thumb{aspect-ratio:16/9;position:relative;display:grid;place-items:center;background:var(--bg3)}
-.ecard .thumb .tag{position:absolute;top:14px;left:14px;font-size:10.5px;font-weight:800;letter-spacing:.08em;background:#fff;color:var(--navy);padding:5px 11px;border-radius:5px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.ecard .thumb .em{font-size:38px;opacity:.5}
+.ecard .thumb{aspect-ratio:16/9;position:relative;background:var(--bg3) center/cover no-repeat}
+.ecard .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,68,.05),rgba(15,37,68,.22))}
+.ecard .thumb .tag{position:absolute;top:14px;left:14px;z-index:2;font-size:10.5px;font-weight:800;letter-spacing:.08em;background:#fff;color:var(--navy);padding:5px 11px;border-radius:5px;box-shadow:0 1px 4px rgba(0,0,0,.1)}
 .ecard .body{padding:24px}
 .ecard .date{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.03em}
 .ecard h3{font-size:18px;font-weight:800;color:var(--ink);margin:7px 0 9px;letter-spacing:-.02em;line-height:1.4}
@@ -112,8 +113,8 @@ section.blk{padding:clamp(72px,9vw,116px) 0}
 /* leaders — 인간미(일본 톤) */
 .lgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .lcard{text-align:center}
-.lface{aspect-ratio:1;border-radius:12px;background:linear-gradient(160deg,#eef3fa,#dfe8f4);display:grid;place-items:center;
-  font-size:30px;font-weight:800;color:var(--blue-soft);letter-spacing:.04em;border:1px solid var(--line);margin-bottom:14px}
+.lface{aspect-ratio:1;border-radius:12px;background:#eef3fa;overflow:hidden;border:1px solid var(--line);margin-bottom:14px}
+.lface img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.15)}
 .lcard .lrole{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.06em}
 .lcard .lname{font-size:17px;font-weight:800;color:var(--ink);margin-top:3px}
 .lcard .lname em{font-style:normal;font-size:12px;color:var(--muted);font-weight:600;display:block;margin-top:2px}
@@ -204,11 +205,14 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
   <div class="stat reveal"><b>1927</b><span>MDRT 설립 연도</span></div>
 </div></div>
 
-<section class="blk" id="about"><div class="wrap about-grid">
-  <div class="reveal">
-    <span class="eyebrow">About MDRT</span>
-    <h2 class="t" style="margin:14px 0 20px">신뢰받는 전문가의<br>기준이 되다</h2>
-    <p class="lead">MDRT(백만달러원탁회의)는 생명보험 및 금융서비스 분야에서 탁월한 성과와 최고 수준의 윤리를 갖춘 전문가만이 가입할 수 있는 국제 협회입니다. 한국MDRT협회는 회원의 전문성 향상과 품격 있는 문화를 이끌며, 고객과 사회로부터 신뢰받는 재정 전문가 상을 만들어갑니다.</p>
+<section class="blk" id="about"><div class="wrap">
+  <div class="about-grid">
+    <div class="reveal">
+      <span class="eyebrow">About MDRT</span>
+      <h2 class="t" style="margin:14px 0 20px">신뢰받는 전문가의<br>기준이 되다</h2>
+      <p class="lead">MDRT(백만달러원탁회의)는 생명보험 및 금융서비스 분야에서 탁월한 성과와 최고 수준의 윤리를 갖춘 전문가만이 가입할 수 있는 국제 협회입니다. 한국MDRT협회는 회원의 전문성 향상과 품격 있는 문화를 이끌며, 고객과 사회로부터 신뢰받는 재정 전문가 상을 만들어갑니다.</p>
+    </div>
+    <div class="reveal"><img class="aboutimg" src="assets/about.jpg" alt="MDRT 회원"></div>
   </div>
   <div class="about-vals reveal">
     <div class="val"><div class="ic">01</div><h4>전문성</h4><p>지속적 학습과 검증된 성과로 최고 수준의 역량을 갖춥니다.</p></div>
@@ -225,11 +229,11 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
     <p class="lead">연차총회부터 지역 워크숍까지, 회원의 성장을 위한 다양한 행사가 열립니다.</p>
   </div>
   <div class="egrid">
-    <div class="ecard reveal"><div class="thumb"><span class="tag">ANNUAL MEETING</span><span class="em">🏛️</span></div>
+    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-annual.jpg)"><span class="tag">ANNUAL MEETING</span></div>
       <div class="body"><div class="date">2026 · Anaheim, USA</div><h3>2026 MDRT 애너하임 연차총회</h3><p>전 세계 회원이 모이는 최대 규모의 국제 컨퍼런스. 글로벌 인사이트와 네트워킹의 장.</p><div class="go">자세히 보기 →</div></div></div>
-    <div class="ecard reveal"><div class="thumb"><span class="tag">MDRT DAY</span><span class="em">🎖️</span></div>
+    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-day.jpg)"><span class="tag">MDRT DAY</span></div>
       <div class="body"><div class="date">2026 · Seoul</div><h3>한국 MDRT Day</h3><p>국내 회원이 한자리에 모여 성취를 나누고 시상하는 협회 대표 연례 행사.</p><div class="go">자세히 보기 →</div></div></div>
-    <div class="ecard reveal"><div class="thumb"><span class="tag">CONFERENCE</span><span class="em">🌏</span></div>
+    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-conf.jpg)"><span class="tag">CONFERENCE</span></div>
       <div class="body"><div class="date">Global · 연중</div><h3>글로벌 컨퍼런스 · 워크숍</h3><p>지역별 스페셜 세션과 실무 워크숍으로 언제 어디서나 성장할 수 있습니다.</p><div class="go">자세히 보기 →</div></div></div>
   </div>
 </div></section>
@@ -255,10 +259,10 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
     <p class="lead">회원의 성장과 협회의 미래를 함께 만들어가는 2026년도 집행부입니다.</p>
   </div>
   <div class="lgrid">
-    <div class="lcard reveal"><div class="lface">회장</div><div class="lrole">회 장</div><div class="lname">○○○<em>Chair</em></div></div>
-    <div class="lcard reveal"><div class="lface">부회장</div><div class="lrole">부회장</div><div class="lname">○○○<em>Vice Chair</em></div></div>
-    <div class="lcard reveal"><div class="lface">총무</div><div class="lrole">총 무</div><div class="lname">○○○<em>Secretary</em></div></div>
-    <div class="lcard reveal"><div class="lface">재정</div><div class="lrole">재 정</div><div class="lname">○○○<em>Treasurer</em></div></div>
+    <div class="lcard reveal"><div class="lface"><img src="assets/ldr1.jpg" alt=""></div><div class="lrole">회 장</div><div class="lname">○○○<em>Chair</em></div></div>
+    <div class="lcard reveal"><div class="lface"><img src="assets/ldr2.jpg" alt=""></div><div class="lrole">부회장</div><div class="lname">○○○<em>Vice Chair</em></div></div>
+    <div class="lcard reveal"><div class="lface"><img src="assets/ldr3.jpg" alt=""></div><div class="lrole">총 무</div><div class="lname">○○○<em>Secretary</em></div></div>
+    <div class="lcard reveal"><div class="lface"><img src="assets/ldr4.jpg" alt=""></div><div class="lrole">재 정</div><div class="lname">○○○<em>Treasurer</em></div></div>
   </div>
   <p class="center" style="margin-top:20px;font-size:12.5px;color:var(--muted)">※ 임원 사진·명단은 실제 자료로 교체 예정입니다.</p>
 </div></section>
