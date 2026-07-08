@@ -331,15 +331,19 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
   <div class="shead center reveal">
     <span class="eyebrow" style="justify-content:center">Events</span>
     <h2 class="t">행사 스케치</h2>
-    <p class="lead">MDRT Day를 비롯한 협회 대표 행사의 생생한 현장을 소개합니다.</p>
+    <p class="lead">한국 MDRT Day부터 글로벌 컨퍼런스까지, MDRT 대표 행사의 생생한 현장을 소개합니다.</p>
   </div>
   <div class="egrid">
-    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-day.jpg)"><span class="tag">MDRT DAY</span></div>
-      <div class="body"><div class="date">한국 MDRT Day</div><h3>블레이저 전달식</h3><p>새로운 회원과 리더에게 MDRT의 상징인 블레이저를 전달하는 뜻깊은 순간.</p><div class="go">자세히 보기 →</div></div></div>
-    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-annual.jpg)"><span class="tag">CEREMONY</span></div>
-      <div class="body"><div class="date">한국 MDRT Day</div><h3>후원사 감사패 전달식</h3><p>협회와 함께해 준 후원사에 감사를 전하는 시상·세리머니.</p><div class="go">자세히 보기 →</div></div></div>
-    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-conf.jpg)"><span class="tag">SPECIAL</span></div>
-      <div class="body"><div class="date">한국 MDRT Day</div><h3>회원 화합 이벤트</h3><p>모두 함께 즐기는 특별 이벤트로 회원 간의 유대를 다집니다.</p><div class="go">자세히 보기 →</div></div></div>
+    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev1.jpg)"><span class="tag">MDRT DAY</span></div>
+      <div class="body"><div class="date">2025 · 일산</div><h3>2025 한국 MDRT Day</h3><p>일산에서 열린 국내 회원의 축제. 성취를 나누고 시상하는 협회 대표 연례 행사.</p><div class="go">자세히 보기 →</div></div></div>
+    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev2.jpg)"><span class="tag">SPECIAL SESSION</span></div>
+      <div class="body"><div class="date">Special Session</div><h3>MDRT 스페셜세션</h3><p>정상급 회원이 자신의 노하우와 인사이트를 나누는 특별 강연 세션.</p><div class="go">자세히 보기 →</div></div></div>
+    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev3.jpg)"><span class="tag">FIRST TIMER</span></div>
+      <div class="body"><div class="date">First Timer</div><h3>퍼스트타이머 페스티벌</h3><p>MDRT에 처음 입회한 회원들을 축하하고 환영하는 뜻깊은 축제의 장.</p><div class="go">자세히 보기 →</div></div></div>
+    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev4.jpg)"><span class="tag">ANNUAL MEETING</span></div>
+      <div class="body"><div class="date">2026 · Anaheim</div><h3>2026 MDRT 연차총회</h3><p>전 세계 회원이 모이는 최대 규모의 국제 컨퍼런스. 글로벌 인사이트와 네트워킹의 장.</p><div class="go">자세히 보기 →</div></div></div>
+    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev5.jpg)"><span class="tag">GLOBAL</span></div>
+      <div class="body"><div class="date">Global Conference</div><h3>MDRT 글로벌컨퍼런스</h3><p>세계 각지에서 열리는 글로벌 컨퍼런스로 국경을 넘어 함께 성장합니다.</p><div class="go">자세히 보기 →</div></div></div>
   </div>
 </div></section>
 
