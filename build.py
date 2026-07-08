@@ -13,6 +13,14 @@ HTML=r"""<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>한국MDRT협회 · Million Dollar Round Table Korea</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="icon" type="image/png" href="assets/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="한국MDRT협회">
+<meta name="application-name" content="한국MDRT협회">
+<meta name="theme-color" content="#1b3a63">
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root{
@@ -144,6 +152,7 @@ section.blk{padding:clamp(72px,9vw,116px) 0}
 .wp .wn{font-size:12px;font-weight:800;color:var(--blue-soft);letter-spacing:.1em}
 .wp h4{font-size:16.5px;font-weight:800;color:var(--ink);margin:9px 0 6px}
 .wp p{font-size:13px;color:var(--muted);line-height:1.65}
+.wp.logo{display:none}
 .wp.intro{background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center}
 .wp.intro b{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.02em}
 .wp.intro span{font-size:12.5px;color:rgba(255,255,255,.72);margin-top:7px;line-height:1.6}
@@ -218,6 +227,7 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
   .egrid,.tiers{grid-template-columns:1fr}
   .rgrid,.about-vals,.wpgrid{grid-template-columns:1fr 1fr}
   .wpgrid .intro{grid-column:1/-1}
+  .wp.logo{display:grid;place-items:center;background:var(--bg2)}.wp.logo img{width:66px;opacity:.42}
   .lgrid,.fgrid{grid-template-columns:1fr 1fr}
   .statrow{grid-template-columns:1fr 1fr}.statrow .stat:nth-child(2){border-right:none}.statrow .stat{border-bottom:1px solid var(--line)}
   .navlinks,.navcta{display:none}.menu-btn{display:flex}
@@ -268,6 +278,7 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
     <div class="wp"><div class="wn">05</div><h4>봉사</h4><p>지역사회에 기여하고 나눔을 실천합니다.</p></div>
     <div class="wp"><div class="wn">06</div><h4>재정</h4><p>분수에 맞는 삶과 지혜로운 자산 관리를 추구합니다.</p></div>
     <div class="wp"><div class="wn">07</div><h4>영성</h4><p>신념에 따라 살며 영적 성장을 지향합니다.</p></div>
+    <div class="wp logo"><img src="data:image/png;base64,__EMB_N__" alt="MDRT"></div>
   </div>
 </div></section>
 
@@ -353,13 +364,12 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
     <p class="lead">2026.3 ~ 2027.2 제24기 집행위원회. 회원의 성장과 협회의 미래를 함께 만들어갑니다.</p>
   </div>
   <div class="lgrid">
-    <div class="lcard reveal"><div class="lface"><img src="assets/ldr1.jpg" alt="남수경 협회장"></div><div class="lrole">협회장</div><div class="lname">남수경<em>Chair</em></div></div>
-    <div class="lcard reveal"><div class="lface">이</div><div class="lrole">제1부회장</div><div class="lname">이종수<em>1st Vice Chair</em></div></div>
-    <div class="lcard reveal"><div class="lface">오</div><div class="lrole">제2부회장</div><div class="lname">오수현<em>2nd Vice Chair</em></div></div>
-    <div class="lcard reveal"><div class="lface">서</div><div class="lrole">사무국장</div><div class="lname">서정훈<em>Secretary General</em></div></div>
-    <div class="lcard reveal"><div class="lface">이</div><div class="lrole">직전협회장</div><div class="lname">이승봉<em>Immediate Past Chair</em></div></div>
+    <div class="lcard reveal"><div class="lface"><img src="assets/ldr1.jpg" alt="남수경 협회장"></div><div class="lrole">협회장</div><div class="lname">남수경<em>메트라이프생명</em></div></div>
+    <div class="lcard reveal"><div class="lface"><img src="assets/ldr2.jpg" alt="이종수 제1부회장"></div><div class="lrole">제1부회장</div><div class="lname">이종수<em>KB라이프파트너스</em></div></div>
+    <div class="lcard reveal"><div class="lface"><img src="assets/ldr3.jpg" alt="오수현 제2부회장"></div><div class="lrole">제2부회장</div><div class="lname">오수현<em>미래에셋금융서비스</em></div></div>
+    <div class="lcard reveal"><div class="lface"><img src="assets/ldr4.jpg" alt="서정훈 사무국장"></div><div class="lrole">사무국장</div><div class="lname">서정훈<em>신한라이프</em></div></div>
+    <div class="lcard reveal"><div class="lface"><img src="assets/ldr5.jpg" alt="이승봉 직전협회장"></div><div class="lrole">직전협회장</div><div class="lname">이승봉<em>KB라이프파트너스</em></div></div>
   </div>
-  <p class="center" style="margin-top:22px;font-size:12.5px;color:var(--muted)">※ 남수경 협회장 외 집행부 사진은 실제 프로필로 교체 예정입니다.</p>
   <div class="orgwrap reveal">
     <div class="subhead">제24기 집행위원회 조직도 · 2026.3–2027.2</div>
     <img class="orgimg" src="assets/org-chart.jpg" alt="한국MDRT협회 제24기 조직도 — 집행위원회, 전임협회장단, 감사위원회, 각 분과 위원장 및 지역위원장">
