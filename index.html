@@ -47,10 +47,9 @@ nav .wrap{display:flex;align-items:center;gap:28px}
 
 /* banner */
 .banner{padding-top:82px}
-.bnr{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:20/6;border:1px solid var(--line);box-shadow:var(--sh);background:#0f2544}
-.bnr .slide{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transition:opacity .8s;display:flex;align-items:center;padding:0 clamp(28px,6vw,68px)}
+.bnr{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1600/558;border:1px solid var(--line);box-shadow:var(--sh);background:#0f2544}
+.bnr .slide{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transition:opacity .8s}
 .bnr .slide.on{opacity:1}
-.bnr .slide::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,37,74,.85),rgba(11,37,74,.35) 60%,transparent)}
 .bnr .bcap{position:relative;z-index:2;color:#fff;max-width:66%}
 .bnr .bcap .bk{font-size:11.5px;font-weight:800;letter-spacing:.14em;color:var(--blue-soft);text-transform:uppercase}
 .bnr .bcap b{display:block;font-size:clamp(19px,3vw,31px);font-weight:800;letter-spacing:-.03em;margin:6px 0 7px;line-height:1.25}
@@ -147,8 +146,8 @@ section.blk{padding:clamp(72px,9vw,116px) 0}
 .jstep h4{font-size:15.5px;font-weight:800;color:var(--ink);margin-bottom:5px}
 .jstep p{font-size:13px;color:var(--muted);line-height:1.6}
 .lcard{text-align:center}
-.lface{aspect-ratio:1;border-radius:12px;background:#eef3fa;overflow:hidden;border:1px solid var(--line);margin-bottom:14px}
-.lface img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.15)}
+.lface{aspect-ratio:1;border-radius:12px;background:linear-gradient(160deg,#eef3fa,#dfe8f4);overflow:hidden;border:1px solid var(--line);margin-bottom:14px;display:grid;place-items:center;font-size:30px;font-weight:800;color:var(--blue-soft)}
+.lface img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.1)}
 .lcard .lrole{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.06em}
 .lcard .lname{font-size:17px;font-weight:800;color:var(--ink);margin-top:3px}
 .lcard .lname em{font-style:normal;font-size:12px;color:var(--muted);font-weight:600;display:block;margin-top:2px}
@@ -200,14 +199,22 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
 .reveal{opacity:0;transform:translateY(20px);transition:.7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 
+.statrow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:52px;background:#fff}
+.hlnum{color:var(--blue);font-weight:800}
+.tier.hl .hlnum{color:#bcd4f0}
+.orgwrap{margin-top:46px}
+.orgimg{width:100%;border-radius:14px;border:1px solid var(--line);display:block;box-shadow:var(--sh)}
 @media(max-width:900px){
-  #hero .wrap,.about-grid,.ethics-grid{grid-template-columns:1fr;gap:36px}
+  .about-grid,.ethics-grid{grid-template-columns:1fr;gap:36px}
   .heroemblem{display:none}
-  .stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:none}.stat{border-bottom:1px solid var(--line)}
-  .egrid,.rgrid,.tiers,.lgrid,.about-vals{grid-template-columns:1fr}
-  .lgrid{grid-template-columns:1fr 1fr}.fgrid{grid-template-columns:1fr 1fr}.wpgrid{grid-template-columns:1fr}.jsteps{grid-template-columns:1fr 1fr}
+  .egrid,.tiers{grid-template-columns:1fr}
+  .rgrid,.about-vals,.wpgrid{grid-template-columns:1fr 1fr}
+  .wpgrid .intro{grid-column:1/-1}
+  .lgrid,.fgrid{grid-template-columns:1fr 1fr}
+  .statrow{grid-template-columns:1fr 1fr}.statrow .stat:nth-child(2){border-right:none}.statrow .stat{border-bottom:1px solid var(--line)}
   .navlinks,.navcta{display:none}.menu-btn{display:flex}
 }
+@media(max-width:560px){.bnr .bcap b{font-size:17px}.bnr .bcap .d{font-size:12px}section.blk{padding:58px 0}}
 </style>
 </head>
 <body>
@@ -217,16 +224,14 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
   <div class="navlinks">
     <a href="#wholeperson">전인적 삶</a><a href="#about">MDRT 소개</a><a href="#membership">명예의 전당</a><a href="#events">행사</a><a href="#resources">리소스</a><a href="#leaders">리더</a>
   </div>
-  <a href="#join" class="navcta">회원 가입</a>
+  <a href="#membership" class="navcta">명예의 전당</a>
   <button class="menu-btn"><span></span><span></span><span></span></button>
 </div></nav>
 
 <section class="banner" id="top"><div class="wrap">
   <div class="bnr" id="bnr">
-    <div class="bhint">배너 영역 · 공지·행사 홍보</div>
-    <div class="slide on" style="background-image:url(assets/ev-annual.jpg)"><div class="bcap"><span class="bk">Annual Meeting</span><b>2026 MDRT 애너하임 연차총회</b><span class="d">전 세계 회원과 함께하는 최대 규모 국제 컨퍼런스</span></div></div>
-    <div class="slide" style="background-image:url(assets/ev-day.jpg)"><div class="bcap"><span class="bk">MDRT Day</span><b>2026 한국 MDRT Day</b><span class="d">협회 대표 연례 행사 · 등록 안내</span></div></div>
-    <div class="slide" style="background-image:url(assets/ev-conf.jpg)"><div class="bcap"><span class="bk">Membership</span><b>2026 회원 가입 안내</b><span class="d">최고의 전문가 네트워크에 합류하세요</span></div></div>
+    <a class="slide on" href="#events" style="background-image:url(assets/bnr1.jpg)"></a>
+    <a class="slide" href="#events" style="background-image:url(assets/bnr2.jpg)"></a>
     <div class="dots" id="bdots"></div>
   </div>
 </div></section>
@@ -258,21 +263,6 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
   </div>
 </div></section>
 
-<section class="blk" id="join"><div class="wrap">
-  <div class="shead center reveal">
-    <span class="eyebrow" style="justify-content:center">Join MDRT Korea</span>
-    <h2 class="t">회원 가입 안내</h2>
-    <p class="lead">MDRT 회원 자격을 갖춘 전문가라면 한국MDRT협회의 일원이 되어 세계적 네트워크와 함께 성장할 수 있습니다.</p>
-  </div>
-  <div class="jsteps reveal">
-    <div class="jstep"><div class="jn">1</div><h4>자격 확인</h4><p>MDRT 회원 자격(생산성·윤리) 기준을 확인합니다.</p></div>
-    <div class="jstep"><div class="jn">2</div><h4>가입 신청</h4><p>필요 서류와 함께 회원 가입을 신청합니다.</p></div>
-    <div class="jstep"><div class="jn">3</div><h4>자격 심사</h4><p>MDRT 본부 기준에 따라 자격을 심사합니다.</p></div>
-    <div class="jstep"><div class="jn">4</div><h4>회원 등록</h4><p>승인 후 한국MDRT협회 회원으로 활동합니다.</p></div>
-  </div>
-  <div class="center" style="margin-top:44px"><a href="#" class="btn primary">회원 가입 신청 →</a></div>
-</div></section>
-
 <section class="blk bg2" id="about"><div class="wrap">
   <div class="about-grid">
     <div class="reveal">
@@ -282,13 +272,11 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
     </div>
     <div class="reveal"><img class="aboutimg" src="assets/about.jpg" alt="MDRT 회원"></div>
   </div>
-  <div class="stats reveal" style="border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:52px;background:#fff">
-    <div style="display:grid;grid-template-columns:repeat(4,1fr)">
-      <div class="stat"><b>3,084<em>명</em></b><span>2026 한국협회 회원</span></div>
-      <div class="stat"><b>80<em>+</em></b><span>전 세계 참여 국가</span></div>
-      <div class="stat"><b>500<em>+</em></b><span>글로벌 참여 회사</span></div>
-      <div class="stat"><b>1927</b><span>MDRT 설립 연도</span></div>
-    </div>
+  <div class="statrow reveal">
+    <div class="stat"><b>3,084<em>명</em></b><span>2026 한국협회 회원</span></div>
+    <div class="stat"><b>80<em>+</em></b><span>전 세계 참여 국가</span></div>
+    <div class="stat"><b>500<em>+</em></b><span>글로벌 참여 회사</span></div>
+    <div class="stat"><b>1927</b><span>MDRT 설립 연도</span></div>
   </div>
   <div class="about-vals reveal">
     <div class="val"><div class="ic">01</div><h4>전문성</h4><p>지속적 학습과 검증된 성과로 최고 수준의 역량을 갖춥니다.</p></div>
@@ -307,14 +295,14 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
   <div class="subhead reveal">회원 자격 등급</div>
   <div class="tiers">
     <div class="tier reveal"><div class="lvl">MDRT</div><h3>Round Table</h3><p>MDRT 회원 자격 기준을 달성한 우수 전문가.</p><div class="req">생산성 · 윤리 기준 충족</div></div>
-    <div class="tier hl reveal"><span class="badge">COURT</span><div class="lvl">COT</div><h3>Court of the Table</h3><p>MDRT 기준의 3배를 달성한 최상위 전문가.</p><div class="req">MDRT 기준 3배 달성</div></div>
-    <div class="tier reveal"><div class="lvl">TOT</div><h3>Top of the Table</h3><p>MDRT 기준의 6배를 달성한 정상급 전문가.</p><div class="req">MDRT 기준 6배 달성</div></div>
+    <div class="tier hl reveal"><span class="badge">COURT</span><div class="lvl">COT</div><h3>Court of the Table</h3><p>MDRT 기준의 <span class="hlnum">3배</span>를 달성한 최상위 전문가.</p><div class="req">MDRT 기준 <span class="hlnum">3배</span> 달성</div></div>
+    <div class="tier reveal"><div class="lvl">TOT</div><h3>Top of the Table</h3><p>MDRT 기준의 <span class="hlnum">6배</span>를 달성한 정상급 전문가.</p><div class="req">MDRT 기준 <span class="hlnum">6배</span> 달성</div></div>
   </div>
   <div class="subhead reveal" style="margin-top:60px">명예 회원 등급</div>
   <div class="tiers">
-    <div class="tier reveal"><div class="lvl">QUARTER CENTURY</div><h3>쿼터센추리</h3><p>25년간 MDRT 자격을 달성해 온 회원. 4반세기에 걸친 변함없는 헌신을 기립니다.</p><div class="req">25년 자격 달성</div></div>
-    <div class="tier reveal"><div class="lvl">HONOR ROLL</div><h3>아너롤</h3><p>오랜 기간 자격을 유지하며 탁월함을 이어 온 명예 회원에게 부여됩니다.</p><div class="req">장기 자격 유지 명예</div></div>
-    <div class="tier reveal"><div class="lvl">LIFE MEMBER</div><h3>종신멤버</h3><p>MDRT 자격을 10년 이상 달성한 회원에게 주어지는 평생의 명예입니다.</p><div class="req">10년 이상 자격 달성</div></div>
+    <div class="tier reveal"><div class="lvl">QUARTER CENTURY</div><h3>쿼터센추리</h3><p><span class="hlnum">25년</span> 이상 MDRT 자격을 달성해 온 회원. 4반세기에 걸친 변함없는 헌신을 기립니다.</p><div class="req"><span class="hlnum">25년</span> 이상 자격 달성</div></div>
+    <div class="tier reveal"><div class="lvl">HONOR ROLL</div><h3>아너롤</h3><p><span class="hlnum">15년</span> 이상 MDRT 자격을 달성하며 탁월함을 이어 온 명예 회원에게 부여됩니다.</p><div class="req"><span class="hlnum">15년</span> 이상 자격 달성</div></div>
+    <div class="tier reveal"><div class="lvl">LIFE MEMBER</div><h3>종신멤버</h3><p>MDRT 자격을 <span class="hlnum">10년</span> 이상 달성한 회원에게 주어지는 평생의 명예입니다.</p><div class="req"><span class="hlnum">10년</span> 이상 자격 달성</div></div>
   </div>
   <div class="center" style="margin-top:44px"><a href="#" class="btn primary">회원 등록 안내 →</a></div>
   <p class="center" style="font-size:12px;color:var(--muted);margin-top:14px">※ 명예 회원 등급의 정확한 자격 기준은 협회 규정 및 MDRT 본부 기준에 따릅니다.</p>
@@ -324,15 +312,15 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
   <div class="shead center reveal">
     <span class="eyebrow" style="justify-content:center">Events</span>
     <h2 class="t">행사 스케치</h2>
-    <p class="lead">연차총회부터 지역 워크숍까지, 회원의 성장을 위한 다양한 행사가 열립니다.</p>
+    <p class="lead">MDRT Day를 비롯한 협회 대표 행사의 생생한 현장을 소개합니다.</p>
   </div>
   <div class="egrid">
-    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-annual.jpg)"><span class="tag">ANNUAL MEETING</span></div>
-      <div class="body"><div class="date">2026 · Anaheim, USA</div><h3>2026 MDRT 애너하임 연차총회</h3><p>전 세계 회원이 모이는 최대 규모의 국제 컨퍼런스. 글로벌 인사이트와 네트워킹의 장.</p><div class="go">자세히 보기 →</div></div></div>
     <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-day.jpg)"><span class="tag">MDRT DAY</span></div>
-      <div class="body"><div class="date">2026 · Seoul</div><h3>한국 MDRT Day</h3><p>국내 회원이 한자리에 모여 성취를 나누고 시상하는 협회 대표 연례 행사.</p><div class="go">자세히 보기 →</div></div></div>
-    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-conf.jpg)"><span class="tag">CONFERENCE</span></div>
-      <div class="body"><div class="date">Global · 연중</div><h3>글로벌 컨퍼런스 · 워크숍</h3><p>지역별 스페셜 세션과 실무 워크숍으로 언제 어디서나 성장할 수 있습니다.</p><div class="go">자세히 보기 →</div></div></div>
+      <div class="body"><div class="date">한국 MDRT Day</div><h3>블레이저 전달식</h3><p>새로운 회원과 리더에게 MDRT의 상징인 블레이저를 전달하는 뜻깊은 순간.</p><div class="go">자세히 보기 →</div></div></div>
+    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-annual.jpg)"><span class="tag">CEREMONY</span></div>
+      <div class="body"><div class="date">한국 MDRT Day</div><h3>후원사 감사패 전달식</h3><p>협회와 함께해 준 후원사에 감사를 전하는 시상·세리머니.</p><div class="go">자세히 보기 →</div></div></div>
+    <div class="ecard reveal"><div class="thumb" style="background-image:url(assets/ev-conf.jpg)"><span class="tag">SPECIAL</span></div>
+      <div class="body"><div class="date">한국 MDRT Day</div><h3>회원 화합 이벤트</h3><p>모두 함께 즐기는 특별 이벤트로 회원 간의 유대를 다집니다.</p><div class="go">자세히 보기 →</div></div></div>
   </div>
 </div></section>
 
@@ -352,18 +340,22 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
 
 <section class="blk bg2" id="leaders"><div class="wrap">
   <div class="shead center reveal">
-    <span class="eyebrow" style="justify-content:center">Leadership · 2026</span>
+    <span class="eyebrow" style="justify-content:center">Leadership · 제24기</span>
     <h2 class="t">협회 리더존</h2>
-    <p class="lead">회원의 성장과 협회의 미래를 함께 만들어가는 2026년도 집행부입니다.</p>
+    <p class="lead">2026.3 ~ 2027.2 제24기 집행위원회. 회원의 성장과 협회의 미래를 함께 만들어갑니다.</p>
   </div>
   <div class="lgrid">
-    <div class="lcard reveal"><div class="lface"><img src="assets/ldr1.jpg" alt=""></div><div class="lrole">협회장</div><div class="lname">남수경<em>Chair</em></div></div>
-    <div class="lcard reveal"><div class="lface"><img src="assets/ldr2.jpg" alt=""></div><div class="lrole">제1부회장</div><div class="lname">이종수<em>1st Vice Chair</em></div></div>
-    <div class="lcard reveal"><div class="lface"><img src="assets/ldr3.jpg" alt=""></div><div class="lrole">제2부회장</div><div class="lname">오수현<em>2nd Vice Chair</em></div></div>
-    <div class="lcard reveal"><div class="lface"><img src="assets/ldr4.jpg" alt=""></div><div class="lrole">사무국장</div><div class="lname">서정훈<em>Secretary General</em></div></div>
-    <div class="lcard reveal"><div class="lface"><img src="assets/ldr5.jpg" alt=""></div><div class="lrole">직전회장</div><div class="lname">이승봉<em>Immediate Past Chair</em></div></div>
+    <div class="lcard reveal"><div class="lface"><img src="assets/ldr1.jpg" alt="남수경 협회장"></div><div class="lrole">협회장</div><div class="lname">남수경<em>Chair</em></div></div>
+    <div class="lcard reveal"><div class="lface">이</div><div class="lrole">제1부회장</div><div class="lname">이종수<em>1st Vice Chair</em></div></div>
+    <div class="lcard reveal"><div class="lface">오</div><div class="lrole">제2부회장</div><div class="lname">오수현<em>2nd Vice Chair</em></div></div>
+    <div class="lcard reveal"><div class="lface">서</div><div class="lrole">사무국장</div><div class="lname">서정훈<em>Secretary General</em></div></div>
+    <div class="lcard reveal"><div class="lface">이</div><div class="lrole">직전협회장</div><div class="lname">이승봉<em>Immediate Past Chair</em></div></div>
   </div>
-  <p class="center" style="margin-top:22px;font-size:12.5px;color:var(--muted)">※ 임원 사진은 예시이며 실제 프로필 사진으로 교체 예정입니다.</p>
+  <p class="center" style="margin-top:22px;font-size:12.5px;color:var(--muted)">※ 남수경 협회장 외 집행부 사진은 실제 프로필로 교체 예정입니다.</p>
+  <div class="orgwrap reveal">
+    <div class="subhead">제24기 집행위원회 조직도 · 2026.3–2027.2</div>
+    <img class="orgimg" src="assets/org-chart.jpg" alt="한국MDRT협회 제24기 조직도 — 집행위원회, 전임협회장단, 감사위원회, 각 분과 위원장 및 지역위원장">
+  </div>
 </div></section>
 
 <section class="blk" id="ethics"><div class="wrap ethics-grid">
