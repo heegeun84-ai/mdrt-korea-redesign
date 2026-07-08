@@ -460,5 +460,20 @@ function msDo(){const q=document.getElementById('msq').value.trim();
 </html>"""
 
 html=HTML.replace("__EMB_N__",b64("mdrt-navy.png")).replace("__EMB_W__",b64("mdrt-white.png")).replace("__EMB_G__",b64("mdrt-gold.png"))
+
+# 전체 글자 크기 10% 확대 — 모든 font-size 값(px/clamp)을 1.1배로
+import re
+SCALE=1.10
+def _n(v): return f"{float(v)*SCALE:.2f}".rstrip('0').rstrip('.')
+def _clamp(m):
+    parts=[p.strip() for p in m.group(1).split(',')]
+    out=[]
+    for p in parts:
+        pm=re.match(r'^([\d.]+)(px|vw|rem|em)$',p)
+        out.append(f"{_n(pm.group(1))}{pm.group(2)}" if pm else p)
+    return "font-size:clamp("+",".join(out)+")"
+html=re.sub(r'font-size:clamp\(([^)]+)\)',_clamp,html)
+html=re.sub(r'font-size:(\d+\.?\d*)px',lambda m:f"font-size:{_n(m.group(1))}px",html)
+
 open(os.path.join(HERE,"index.html"),"w",encoding="utf-8").write(html)
 print("written:",len(html),"bytes")
