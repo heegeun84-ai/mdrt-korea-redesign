@@ -234,7 +234,7 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
 .mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
 .mlogo{aspect-ratio:3/2;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;background:#fff;padding:18px;transition:.25s}
 .mlogo:hover{box-shadow:var(--sh);border-color:var(--line2)}
-.mlogo img{max-width:100%;max-height:56px;object-fit:contain}
+.mlogo img{max-width:82%;max-height:48px;object-fit:contain}
 .mlogo span{font-size:clamp(14px,1.7vw,18px);font-weight:800;color:var(--navy);letter-spacing:-.02em;text-align:center;line-height:1.35}
 @media(max-width:900px){.mgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:900px){
@@ -418,14 +418,14 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
   </div>
   <div class="mgrid reveal">
     <div class="mlogo"><span>신한라이프</span></div>
-    <div class="mlogo"><span>메트라이프</span></div>
+    <div class="mlogo"><img src="assets/logos/metlife.png" alt="메트라이프"></div>
     <div class="mlogo"><span>교보생명</span></div>
-    <div class="mlogo"><span>KB라이프<br>파트너스</span></div>
-    <div class="mlogo"><span>AIA프리미어<br>파트너스</span></div>
+    <div class="mlogo"><img src="assets/logos/kblife.png" alt="KB라이프파트너스"></div>
+    <div class="mlogo"><img src="assets/logos/aia.png" alt="AIA프리미어파트너스"></div>
     <div class="mlogo"><span>KMI에셋</span></div>
     <div class="mlogo"><span>현대홈쇼핑보험</span></div>
   </div>
-  <p class="center" style="font-size:12px;color:var(--muted);margin-top:18px">※ 각 회원사 로고 이미지를 주시면 회사명 자리에 동일 크기로 교체합니다.</p>
+  <p class="center" style="font-size:12px;color:var(--muted);margin-top:18px">※ 신한라이프·교보생명·KMI에셋·현대홈쇼핑보험 로고 파일을 주시면 동일 크기로 넣겠습니다.</p>
 </div></section>
 
 <footer><div class="wrap">
