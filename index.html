@@ -223,6 +223,12 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
 .tier.hl .hlnum{color:#bcd4f0}
 .orgwrap{margin-top:46px}
 .orgimg{width:100%;border-radius:14px;border:1px solid var(--line);display:block;box-shadow:var(--sh)}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+.mlogo{aspect-ratio:3/2;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;background:#fff;padding:18px;transition:.25s}
+.mlogo:hover{box-shadow:var(--sh);border-color:var(--line2)}
+.mlogo img{max-width:100%;max-height:56px;object-fit:contain}
+.mlogo span{font-size:clamp(14px,1.7vw,18px);font-weight:800;color:var(--navy);letter-spacing:-.02em;text-align:center;line-height:1.35}
+@media(max-width:900px){.mgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:900px){
   .about-grid,.ethics-grid{grid-template-columns:1fr;gap:36px}
   .heroemblem{display:none}
@@ -394,6 +400,24 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
     <div class="ei"><div class="n">3</div><div><b>전문성 유지</b><span>지속적 학습으로 최고의 전문성을 유지합니다.</span></div></div>
     <div class="ei"><div class="n">4</div><div><b>비밀 보장</b><span>고객의 정보를 철저히 보호합니다.</span></div></div>
   </div>
+</div></section>
+
+<section class="blk" id="members"><div class="wrap">
+  <div class="shead center reveal">
+    <span class="eyebrow" style="justify-content:center">Member Companies</span>
+    <h2 class="t">함께하는 회원사</h2>
+    <p class="lead">한국MDRT협회 회원이 소속된 회원사입니다.</p>
+  </div>
+  <div class="mgrid reveal">
+    <div class="mlogo"><span>신한라이프</span></div>
+    <div class="mlogo"><span>메트라이프</span></div>
+    <div class="mlogo"><span>교보생명</span></div>
+    <div class="mlogo"><span>KB라이프<br>파트너스</span></div>
+    <div class="mlogo"><span>AIA프리미어<br>파트너스</span></div>
+    <div class="mlogo"><span>KMI에셋</span></div>
+    <div class="mlogo"><span>현대홈쇼핑보험</span></div>
+  </div>
+  <p class="center" style="font-size:12px;color:var(--muted);margin-top:18px">※ 각 회원사 로고 이미지를 주시면 회사명 자리에 동일 크기로 교체합니다.</p>
 </div></section>
 
 <footer><div class="wrap">
