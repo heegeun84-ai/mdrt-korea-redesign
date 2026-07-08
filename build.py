@@ -146,6 +146,8 @@ section.blk{padding:clamp(72px,9vw,116px) 0}
 .lcard .lname em{font-style:normal;font-size:12px;color:var(--muted);font-weight:600;display:block;margin-top:2px}
 
 /* membership */
+.subhead{text-align:center;font-size:12.5px;font-weight:800;letter-spacing:.12em;color:var(--blue);text-transform:uppercase;margin-bottom:24px}
+.subhead::before,.subhead::after{content:"";display:inline-block;width:26px;height:1px;background:var(--blue-soft);opacity:.5;vertical-align:middle;margin:0 12px}
 .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:6px}
 .tier{background:#fff;border:1px solid var(--line);border-radius:14px;padding:36px 30px;transition:.25s;position:relative}
 .tier:hover{border-color:var(--line2);box-shadow:var(--sh)}
@@ -205,7 +207,7 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
 <nav id="nav"><div class="wrap">
   <a href="#hero" class="logo"><img src="data:image/png;base64,__EMB_N__" alt="MDRT"><span class="lt">한국MDRT협회<small>MDRT KOREA</small></span></a>
   <div class="navlinks">
-    <a href="#about">협회 소개</a><a href="#events">행사</a><a href="#resources">리소스</a><a href="#leaders">임원</a><a href="#membership">멤버십</a><a href="#ethics">윤리강령</a>
+    <a href="#about">협회 소개</a><a href="#events">행사</a><a href="#resources">리소스</a><a href="#leaders">임원</a><a href="#membership">명예의 전당</a><a href="#ethics">윤리강령</a>
   </div>
   <a href="#membership" class="navcta">회원 가입</a>
   <button class="menu-btn"><span></span><span></span><span></span></button>
@@ -314,16 +316,24 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
 
 <section class="blk" id="membership"><div class="wrap">
   <div class="shead center reveal">
-    <span class="eyebrow">Membership</span>
-    <h2 class="t">최고의 자리에 합류하세요</h2>
-    <p class="lead">성과에 따라 MDRT, COT, TOT 자격으로 인정받으며, 전 세계 전문가 네트워크의 일원이 됩니다.</p>
+    <span class="eyebrow" style="justify-content:center">Hall of Fame</span>
+    <h2 class="t">명예의 전당</h2>
+    <p class="lead">탁월한 성과와 오랜 헌신으로 MDRT의 역사를 함께 만들어 온 회원들을 기립니다.</p>
   </div>
+  <div class="subhead reveal">회원 자격 등급</div>
   <div class="tiers">
     <div class="tier reveal"><div class="lvl">MDRT</div><h3>Round Table</h3><p>MDRT 회원 자격 기준을 달성한 우수 전문가.</p><div class="req">생산성 · 윤리 기준 충족</div></div>
     <div class="tier hl reveal"><span class="badge">COURT</span><div class="lvl">COT</div><h3>Court of the Table</h3><p>MDRT 기준의 3배를 달성한 최상위 전문가.</p><div class="req">MDRT 기준 3배 달성</div></div>
     <div class="tier reveal"><div class="lvl">TOT</div><h3>Top of the Table</h3><p>MDRT 기준의 6배를 달성한 정상급 전문가.</p><div class="req">MDRT 기준 6배 달성</div></div>
   </div>
-  <div class="center" style="margin-top:40px"><a href="#" class="btn primary">회원 등록 안내 →</a></div>
+  <div class="subhead reveal" style="margin-top:60px">명예 회원 등급</div>
+  <div class="tiers">
+    <div class="tier reveal"><div class="lvl">QUARTER CENTURY</div><h3>쿼터센추리</h3><p>25년간 MDRT 자격을 달성해 온 회원. 4반세기에 걸친 변함없는 헌신을 기립니다.</p><div class="req">25년 자격 달성</div></div>
+    <div class="tier reveal"><div class="lvl">HONOR ROLL</div><h3>아너롤</h3><p>오랜 기간 자격을 유지하며 탁월함을 이어 온 명예 회원에게 부여됩니다.</p><div class="req">장기 자격 유지 명예</div></div>
+    <div class="tier reveal"><div class="lvl">LIFE MEMBER</div><h3>종신멤버</h3><p>MDRT 자격을 10년 이상 달성한 회원에게 주어지는 평생의 명예입니다.</p><div class="req">10년 이상 자격 달성</div></div>
+  </div>
+  <div class="center" style="margin-top:44px"><a href="#" class="btn primary">회원 등록 안내 →</a></div>
+  <p class="center" style="font-size:12px;color:var(--muted);margin-top:14px">※ 명예 회원 등급의 정확한 자격 기준은 협회 규정 및 MDRT 본부 기준에 따릅니다.</p>
 </div></section>
 
 <section class="blk bg2" id="ethics"><div class="wrap ethics-grid">
