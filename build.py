@@ -259,6 +259,10 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
 .mtoast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(16px);opacity:0;background:#0f2544;color:#fff;font-size:14px;font-weight:600;padding:12px 22px;border-radius:10px;box-shadow:0 14px 30px -12px rgba(0,0,0,.5);z-index:999;transition:.3s;pointer-events:none;border:1px solid rgba(230,201,138,.35)}
 .mtoast.show{opacity:1;transform:translateX(-50%)}
 @media(max-width:900px){.navshare span{display:none}.navshare{margin-left:auto;padding:8px 11px}}
+#toTop{position:fixed;right:20px;bottom:24px;z-index:90;width:48px;height:48px;border:none;border-radius:50%;background:var(--navy);color:#e6c98a;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 12px 26px -10px rgba(15,37,68,.6);opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:.3s}
+#toTop.show{opacity:1;transform:none;pointer-events:auto}
+#toTop:hover{background:#132c4d}
+#toTop svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 </style>
 </head>
 <body>
@@ -480,8 +484,13 @@ function shareSite(){var url=location.href.split('#')[0];var d={title:'한국MDR
   function q(k){return fetch('https://abacus.jasoncameron.dev/'+verb+'/'+NS+'/'+k).then(function(r){return r.json();}).then(function(j){return(j&&typeof j.value==='number')?j.value:null;}).catch(function(){return null;});}
   q('total').then(function(v){if(v!=null)ea.textContent=v.toLocaleString();});
   q(day).then(function(v){if(v!=null)et.textContent=v.toLocaleString();});})();
+// 맨 위로 버튼
+(function(){var b=document.getElementById('toTop');if(!b)return;
+  addEventListener('scroll',function(){b.classList.toggle('show',scrollY>250);},{passive:true});
+  b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
 </script>
 <div class="mtoast" id="mtoast"></div>
+<button id="toTop" type="button" aria-label="맨 위로"><svg viewBox="0 0 24 24"><polyline points="6 15 12 9 18 15"/></svg></button>
 </body>
 </html>"""
 
