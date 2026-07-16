@@ -249,6 +249,16 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
   .navlinks,.navcta{display:none}.menu-btn{display:flex}
 }
 @media(max-width:560px){.bnr .bcap b{font-size:17px}.bnr .bcap .d{font-size:12px}section.blk{padding:58px 0}}
+/* 공유 버튼 · 방문자 카운터 · 토스트 */
+.navshare{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:8px 14px;border-radius:6px;border:1.5px solid var(--line2);color:var(--navy);background:#fff;cursor:pointer;transition:.2s;margin-left:10px;font-family:inherit}
+.navshare:hover{border-color:var(--navy);background:#f7f9fc}
+.navshare svg{width:15px;height:15px}
+.fvisit{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13.5px;color:rgba(255,255,255,.6);border-top:1px solid rgba(255,255,255,.1);padding:20px 0 6px;margin-top:26px}
+.fvisit b{color:#e6c98a;font-weight:800;font-size:15px}
+.fvisit .dot{color:rgba(255,255,255,.28)}
+.mtoast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(16px);opacity:0;background:#0f2544;color:#fff;font-size:14px;font-weight:600;padding:12px 22px;border-radius:10px;box-shadow:0 14px 30px -12px rgba(0,0,0,.5);z-index:999;transition:.3s;pointer-events:none;border:1px solid rgba(230,201,138,.35)}
+.mtoast.show{opacity:1;transform:translateX(-50%)}
+@media(max-width:900px){.navshare span{display:none}.navshare{margin-left:auto;padding:8px 11px}}
 </style>
 </head>
 <body>
@@ -259,6 +269,7 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
     <a href="#wholeperson">전인적 삶</a><a href="#about">MDRT 소개</a><a href="#membership">명예의 전당</a><a href="#events">행사</a><a href="#resources">리소스</a><a href="#leaders">리더</a>
   </div>
   <a href="#membership" class="navcta">명예의 전당</a>
+  <button class="navshare" type="button" onclick="shareSite()" aria-label="공유하기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg><span>공유</span></button>
   <button class="menu-btn"><span></span><span></span><span></span></button>
 </div></nav>
 
@@ -438,6 +449,7 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
     <div class="fcol"><h5>멤버십·행사</h5><a href="#membership">회원 등록</a><a href="#">멘토링</a><a href="#events">행사 안내</a><a href="#">상품 주문</a></div>
     <div class="fcol"><h5>리소스</h5><a href="#resources">강연 영상</a><a href="#">간행물</a><a href="#">공지사항</a><a href="#">FAQ</a></div>
   </div>
+  <div class="fvisit">오늘 방문 <b id="vToday">·</b><span class="dot">·</span>누적 방문 <b id="vTotal">·</b></div>
   <div class="fbot"><span>© 2026 한국MDRT협회 · Million Dollar Round Table Korea</span><span>서울특별시 서초구 · 리디자인 시안(demo)</span></div>
 </div></footer>
 
@@ -455,7 +467,21 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 function msDo(){const q=document.getElementById('msq').value.trim();
   if(!q){alert('검색할 회원 이름을 입력하세요');return;}
   window.open('https://mdrtkorea.org/Membership/searchMember?search_type=mem_username&search_value='+encodeURIComponent(q),'_blank');}
+// 공유하기
+function mtoast(m){var t=document.getElementById('mtoast');if(!t)return;t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('show');},2200);}
+function shareSite(){var url=location.href.split('#')[0];var d={title:'한국MDRT협회',text:'세계 최고 보험·재정 전문가가 함께하는 국제 조직, 한국MDRT협회',url:url};
+  if(navigator.share){navigator.share(d).catch(function(){});}
+  else{navigator.clipboard.writeText(url).then(function(){mtoast('링크가 복사되었습니다');}).catch(function(){prompt('링크',url);});}}
+// 방문자 카운터(오늘/누적 · 세션당 1회 집계)
+(function(){var et=document.getElementById('vToday'),ea=document.getElementById('vTotal');if(!et||!ea)return;
+  var NS='mdrt-korea';var d=new Date();var day='d'+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');
+  var flag='mdrt_v_'+day,first=true;try{first=!sessionStorage.getItem(flag);if(first)sessionStorage.setItem(flag,'1');}catch(e){}
+  var verb=first?'hit':'get';
+  function q(k){return fetch('https://abacus.jasoncameron.dev/'+verb+'/'+NS+'/'+k).then(function(r){return r.json();}).then(function(j){return(j&&typeof j.value==='number')?j.value:null;}).catch(function(){return null;});}
+  q('total').then(function(v){if(v!=null)ea.textContent=v.toLocaleString();});
+  q(day).then(function(v){if(v!=null)et.textContent=v.toLocaleString();});})();
 </script>
+<div class="mtoast" id="mtoast"></div>
 </body>
 </html>"""
 
