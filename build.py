@@ -56,7 +56,9 @@ h2.t{font-size:clamp(25px,3.6vw,37px);font-weight:800;color:var(--ink);letter-sp
 .btn.ghost:hover{border-color:var(--navy);color:var(--navy)}
 
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s;padding:20px 0;border-bottom:1px solid transparent}
+nav{position:fixed;top:34px;left:0;right:0;z-index:50;transition:.3s;padding:20px 0;border-bottom:1px solid transparent}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:52;background:var(--navy);color:rgba(255,255,255,.82);text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:8px 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-bottom:1px solid rgba(230,201,138,.25)}
+.topbar b{color:#e6c98a;font-weight:800;margin:0 3px}
 nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-color:var(--line);padding:14px 0}
 nav .wrap{display:flex;align-items:center;gap:28px}
 .logo{display:flex;align-items:center;gap:11px}
@@ -259,7 +261,10 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
 .mtoast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(16px);opacity:0;background:#0f2544;color:#fff;font-size:14px;font-weight:600;padding:12px 22px;border-radius:10px;box-shadow:0 14px 30px -12px rgba(0,0,0,.5);z-index:999;transition:.3s;pointer-events:none;border:1px solid rgba(230,201,138,.35)}
 .mtoast.show{opacity:1;transform:translateX(-50%)}
 @media(max-width:900px){.navshare span{display:none}.navshare{margin-left:auto;padding:8px 11px}}
-#toTop{position:fixed;right:20px;bottom:24px;z-index:90;width:48px;height:48px;border:none;border-radius:50%;background:var(--navy);color:#e6c98a;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 12px 26px -10px rgba(15,37,68,.6);opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:.3s}
+#fabShare{position:fixed;right:20px;bottom:24px;z-index:91;width:52px;height:52px;border:none;border-radius:50%;background:var(--navy);color:#e6c98a;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 14px 30px -10px rgba(15,37,68,.7);transition:.2s}
+#fabShare:hover{background:#132c4d;transform:translateY(-1px)}
+#fabShare svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#toTop{position:fixed;right:20px;bottom:86px;z-index:90;width:48px;height:48px;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(15,37,68,.5);opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:.3s}
 #toTop.show{opacity:1;transform:none;pointer-events:auto}
 #toTop:hover{background:#132c4d}
 #toTop svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
@@ -267,13 +272,13 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
 </head>
 <body>
 
+<div class="topbar">오늘 방문 <b id="vToday">·</b> · 누적 방문 <b id="vTotal">·</b></div>
 <nav id="nav"><div class="wrap">
   <a href="#top" class="logo"><img src="data:image/png;base64,__EMB_N__" alt="MDRT"><span class="lt">한국MDRT협회<small>MDRT KOREA</small></span></a>
   <div class="navlinks">
     <a href="#wholeperson">전인적 삶</a><a href="#about">MDRT 소개</a><a href="#membership">명예의 전당</a><a href="#events">행사</a><a href="#resources">리소스</a><a href="#leaders">리더</a>
   </div>
   <a href="#membership" class="navcta">명예의 전당</a>
-  <button class="navshare" type="button" onclick="shareSite()" aria-label="공유하기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg><span>공유</span></button>
   <button class="menu-btn"><span></span><span></span><span></span></button>
 </div></nav>
 
@@ -453,7 +458,6 @@ footer .fdesc{margin-top:16px;max-width:24em;line-height:1.8;color:rgba(255,255,
     <div class="fcol"><h5>멤버십·행사</h5><a href="#membership">회원 등록</a><a href="#">멘토링</a><a href="#events">행사 안내</a><a href="#">상품 주문</a></div>
     <div class="fcol"><h5>리소스</h5><a href="#resources">강연 영상</a><a href="#">간행물</a><a href="#">공지사항</a><a href="#">FAQ</a></div>
   </div>
-  <div class="fvisit">오늘 방문 <b id="vToday">·</b><span class="dot">·</span>누적 방문 <b id="vTotal">·</b></div>
   <div class="fbot"><span>© 2026 한국MDRT협회 · Million Dollar Round Table Korea</span><span>서울특별시 서초구 · 리디자인 시안(demo)</span></div>
 </div></footer>
 
@@ -490,6 +494,7 @@ function shareSite(){var url=location.href.split('#')[0];var d={title:'한국MDR
   b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
 </script>
 <div class="mtoast" id="mtoast"></div>
+<button id="fabShare" type="button" onclick="shareSite()" aria-label="공유하기"><svg viewBox="0 0 24 24"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg></button>
 <button id="toTop" type="button" aria-label="맨 위로"><svg viewBox="0 0 24 24"><polyline points="6 15 12 9 18 15"/></svg></button>
 </body>
 </html>"""
